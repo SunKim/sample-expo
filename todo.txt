@@ -1,0 +1,12 @@
+todo
+
+//AppProvider (app context)
+//safe area
+//navigation
+i18n
+check token, login
+notification
+linking
+firebase analytics
+firebase crashlytics
+firebase performance

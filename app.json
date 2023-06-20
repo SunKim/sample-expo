@@ -1,30 +1,43 @@
 {
-  "expo": {
-    "name": "sample-expo",
-    "slug": "sample-expo",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    }
-  }
+	"expo": {
+		"owner": "cavernclub",
+		"name": "HOLD GLOBAL",
+		"slug": "HOLD",
+		"version": "1.0.0",
+		"orientation": "portrait",
+		"icon": "./assets/app/icon.png",
+		"userInterfaceStyle": "light",
+		"jsEngine": "hermes",
+		"splash": {
+			"image": "./assets/app/splash_designGuided.png",
+			"resizeMode": "cover",
+			"backgroundColor": "#ff0229"
+		},
+		"assetBundlePatterns": ["**/*"],
+		"ios": {
+			"bundleIdentifier": "com.cvrn.hold-global",
+			"supportsTablet": true,
+			"requireFullScreen": true,
+			"buildNumber": "1",
+			"jsEngine": "hermes"
+		},
+		"android": {
+			"package": "com.cvrn.hold-global",
+			"versionCode": 1,
+			"adaptiveIcon": {
+				"foregroundImage": "./assets/app/adaptive-icon.png",
+				"backgroundColor": "#ffffff"
+			}
+		},
+		"notification": {
+			"icon": "./assets/app/noti_icon.png",
+			"color": "#ff0229",
+			"androidMode": "collapse",
+			"androidCollapsedTitle": "[홀드]에서 도착한 메시지가 있습니다.",
+			"iosDisplayInForeground": true
+		},
+		"web": {
+			"favicon": "./assets/app/favicon.png"
+		}
+	}
 }
