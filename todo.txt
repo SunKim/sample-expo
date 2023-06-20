@@ -3,6 +3,7 @@ todo
 //AppProvider (app context)
 //safe area
 //navigation
+config (app.json -> app.config.js)
 i18n
 check token, login
 notification
