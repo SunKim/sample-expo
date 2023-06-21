@@ -40,19 +40,19 @@ function HomeMain({navigation, route}) {
 		await getSomeData()
 	}
 
-	// XX 데이터 불러오기
+	// api request for test data
 	const getSomeData = async () => {
 		try {
-			const result = await apis.TEST('hello', 'world')
-			console.log(`HomeMain - getSomeData. result: `, result)
+			const result = await apis.TEST('hello', 'home')
+			// console.log(`Tab4Main - getSomeData. result: `, result)
 
 			if (result.success == '200') {
 			} else {
-				Alert.alert('잠깐!', result.message)
+				Alert.alert(i18n.t('dict.alert'), result.message)
 			}
 		} catch (e) {
 			console.error(`HomeMain - getSomeData. error: `, e)
-			Alert.alert('잠깐!', `XXXX 도중 오류가 발생했습니다.\n고객센터로 연락 바랍니다.(카카오채널 @HOLD)`)
+			Alert.alert(i18n.t('dict.alert'), i18n.t('error.apiFail'))
 		}
 	}
 

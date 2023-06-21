@@ -1,6 +1,7 @@
 import axios from 'axios'
 import * as Device from 'expo-device'
 import {expo} from '../../app.json'
+import i18n from '../helper/i18n'
 
 // server host 설정. .env에 하려 했으나 운영테스트로 자주 바꿔야 되므로 그냥 여기에 설정
 // const host = 'https://manage.clubhold.com/api' // 운영서버
@@ -34,7 +35,7 @@ export const deviceInfo = {
 // }
 
 const reqApi = async (uri, params) => {
-	const paramsWithInfo = {...params, appVerInfo, deviceInfo}
+	const paramsWithInfo = {...params, appVerInfo, deviceInfo, locale: i18n.locale}
 	console.log(`requesting Api [${uri}] - paramsWithInfo: `, paramsWithInfo)
 	return await api.post(uri, paramsWithInfo).then((r) => r.data).catch((err) => err)
 }

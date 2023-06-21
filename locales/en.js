@@ -17,4 +17,7 @@ export const en = {
 	message: {
 		languageChanged: 'Language has been changed.\nThe app will be restarted.',
 	},
+	error: {
+		apiFail: 'Error occured while processing API.\nPlease contact us.',
+	},
 }

@@ -43,7 +43,7 @@ function Tab4Main({navigation, route}) {
 		await getSomeData()
 	}
 
-	// XX 데이터 불러오기
+	// api request for test data
 	const getSomeData = async () => {
 		try {
 			const result = await apis.TEST('hello', 'tab4')
@@ -55,7 +55,7 @@ function Tab4Main({navigation, route}) {
 			}
 		} catch (e) {
 			console.error(`Tab4Main - getSomeData. error: `, e)
-			Alert.alert(i18n.t('dict.alert'), `처리 도중 오류가 발생했습니다.\n고객센터로 연락 바랍니다.`)
+			Alert.alert(i18n.t('dict.alert'), i18n.t('error.apiFail'))
 		}
 	}
 

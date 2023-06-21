@@ -17,4 +17,7 @@ export const ko = {
 	message: {
 		languageChanged: '언어가 변경되었습니다.\n앱을 재시작합니다.',
 	},
+	error: {
+		apiFail: 'API 처리중 오류가 발생했습니다.\n관리자에게 문의 바랍니다.',
+	},
 }

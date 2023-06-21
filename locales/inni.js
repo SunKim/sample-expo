@@ -17,4 +17,7 @@ export const inni = {
 	message: {
 		languageChanged: 'Bahasa telah diubah.\nMulai ulang aplikasi.',
 	},
+	error: {
+		apiFail: 'Terjadi kesalahan saat memproses API.\nHarap hubungi administrator.',
+	},
 }
