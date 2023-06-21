@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import {StackActions} from '@react-navigation/native'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
@@ -14,6 +14,10 @@ import Tab4StackNavigator from './Tab4StackNavigator'
 const Tab = createBottomTabNavigator()
 
 export default function MainTabNavigator() {
+	useEffect(() => {
+		console.log(`MainTabNavigator. i18n.locale: `, i18n.locale)
+	}, [])
+
 	return (
 		<Tab.Navigator initialRouteName='Home' tabBar={(props) => <CustomTabBar {...props} />}>
 			<Tab.Screen

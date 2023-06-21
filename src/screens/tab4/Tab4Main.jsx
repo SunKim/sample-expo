@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react'
 import {View, SafeAreaView, ScrollView, Alert, TouchableOpacity, Image, Text, Dimensions, StyleSheet} from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import * as Updates from 'expo-updates'
+import RNRestart from 'react-native-restart'
 import {ActivityIndicator} from 'react-native-paper'
 
 import i18n from '../../helper/i18n'
@@ -65,14 +65,13 @@ function Tab4Main({navigation, route}) {
 
 		// await Updates.reloadAsync()
 		console.log(`Tab4Main - changeLang. lang: ${lang}, i18n.locale: `, i18n.locale)
-		console.log(`Tab4Main - changeLang. lang: ${lang}, i18n: `, i18n)
 		// navigation.replace('Tab4Main')
 
 		Alert.alert('알림', i18n.t('message.languageChanged'), [
 			{
 				text: i18n.t('dict.ok'),
-				onPress: async () => {
-					await Updates.reloadAsync()
+				onPress: () => {
+					RNRestart.restart()
 				},
 			},
 		])
