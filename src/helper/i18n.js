@@ -3,7 +3,6 @@
 // cf) https://medium.com/@nicolas.kovacs/react-native-localize-and-i18n-js-117f09428017
 import {getLocales} from 'expo-localization'
 import {I18n} from 'i18n-js'
-import AsyncStorage from '@react-native-async-storage/async-storage'
 
 import {en} from '../../locales/en'
 import {ko} from '../../locales/ko'

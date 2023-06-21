@@ -53,26 +53,32 @@ const gs = StyleSheet.create({
 		marginBottom: 6,
 	},
 	text14c3: {
+		fontFamily: 'PretendardTabular-Medium-500',
 		fontSize: 14,
 		color: '#333',
 	},
 	text14c6: {
+		fontFamily: 'PretendardTabular-Medium-500',
 		fontSize: 14,
 		color: '#666',
 	},
 	text14c9: {
+		fontFamily: 'PretendardTabular-Medium-500',
 		fontSize: 14,
 		color: '#999',
 	},
 	text16c3: {
+		fontFamily: 'PretendardTabular-Medium-500',
 		fontSize: 16,
 		color: '#333',
 	},
 	text16c6: {
+		fontFamily: 'PretendardTabular-Medium-500',
 		fontSize: 16,
 		color: '#666',
 	},
 	text16c9: {
+		fontFamily: 'PretendardTabular-Medium-500',
 		fontSize: 16,
 		color: '#999',
 	},

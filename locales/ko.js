@@ -15,6 +15,7 @@ export const ko = {
 		setting: '설정',
 	},
 	message: {
+		thisIsTestPage: '이것은 테스트페이지 입니다.',
 		languageChanged: '언어가 변경되었습니다.\n앱을 재시작합니다.',
 	},
 	error: {

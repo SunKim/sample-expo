@@ -15,6 +15,7 @@ export const en = {
 		setting: 'Setting',
 	},
 	message: {
+		thisIsTestPage: 'This is a test page.',
 		languageChanged: 'Language has been changed.\nThe app will be restarted.',
 	},
 	error: {

@@ -15,6 +15,7 @@ export const inni = {
 		setting: 'pengaturan',
 	},
 	message: {
+		thisIsTestPage: 'Ini adalah halaman percobaan.',
 		languageChanged: 'Bahasa telah diubah.\nMulai ulang aplikasi.',
 	},
 	error: {

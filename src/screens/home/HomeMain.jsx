@@ -44,7 +44,7 @@ function HomeMain({navigation, route}) {
 	const getSomeData = async () => {
 		try {
 			const result = await apis.TEST('hello', 'home')
-			// console.log(`Tab4Main - getSomeData. result: `, result)
+			console.log(`HomeMain - getSomeData. result: `, result)
 
 			if (result.success == '200') {
 			} else {
@@ -60,10 +60,12 @@ function HomeMain({navigation, route}) {
 		<ActivityIndicator size={'large'} animating={true} color={'#ff0229'} style={{position: 'absolute', top: height / 2 - 30, alignSelf: 'center', zIndex: 9999}} />
 	) : (
 		<SafeAreaView style={gs.container}>
-			<ScrollView>
+			<ScrollView style={{padding: 18}}>
 				<Text style={ls.text}>HomeMain</Text>
 
 				<Text style={gs.h2}>{i18n.t('dict.hello')}</Text>
+
+				<Text style={gs.text14c3}>{i18n.t('message.thisIsTestPage')}</Text>
 			</ScrollView>
 		</SafeAreaView>
 	)
