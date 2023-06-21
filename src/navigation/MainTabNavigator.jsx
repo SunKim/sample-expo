@@ -3,6 +3,7 @@ import {StackActions} from '@react-navigation/native'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 
+import i18n from '../helper/i18n'
 import CustomTabBar from './CustomTapBar'
 import HomeStackNavigator from './HomeStackNavigator'
 import Tab1StackNavigator from './Tab1StackNavigator'
@@ -34,7 +35,7 @@ export default function MainTabNavigator() {
 				}}
 				options={{
 					headerShown: false,
-					tabBarLabel: 'Tab1',
+					tabBarLabel: i18n.t('menu.treat'),
 					tabBarIcon: ({focused, color, size}) => <MaterialCommunityIcons name='stethoscope' color={color} size={24} />,
 				}}
 			/>
@@ -55,7 +56,7 @@ export default function MainTabNavigator() {
 				}}
 				options={{
 					headerShown: false,
-					tabBarLabel: 'Tab2',
+					tabBarLabel: i18n.t('menu.shop'),
 					tabBarIcon: ({focused, color, size}) => <MaterialCommunityIcons name='basket' color={color} size={24} />,
 				}}
 			/>
@@ -77,7 +78,7 @@ export default function MainTabNavigator() {
 				}}
 				options={{
 					headerShown: false,
-					tabBarLabel: '홈',
+					tabBarLabel: i18n.t('menu.home'),
 					// tabBarShowLabel: false,
 					tabBarIcon: ({focused, color, size}) => (
 						<>
@@ -103,7 +104,7 @@ export default function MainTabNavigator() {
 				}}
 				options={{
 					headerShown: false,
-					tabBarLabel: 'Tab3',
+					tabBarLabel: i18n.t('menu.community'),
 					tabBarIcon: ({focused, color, size}) => (
 						<>
 							<MaterialCommunityIcons name='bulletin-board' color={color} size={24} />
@@ -131,7 +132,7 @@ export default function MainTabNavigator() {
 				}}
 				options={{
 					headerShown: false,
-					tabBarLabel: 'Tab4',
+					tabBarLabel: i18n.t('menu.myMenu'),
 					tabBarIcon: ({focused, color, size}) => <MaterialCommunityIcons name='account' color={color} size={24} />,
 				}}
 			/>

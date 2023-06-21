@@ -1,6 +1,6 @@
 todo
 
-//AppProvider (app context)
+//AppContextProvider (app context)
 //safe area
 //navigation
 config (app.json -> app.config.js)

@@ -2,6 +2,7 @@ import React, {useState, useEffect, useRef} from 'react'
 import {View, SafeAreaView, ScrollView, Alert, TouchableOpacity, Image, Text, Dimensions, StyleSheet} from 'react-native'
 import {ActivityIndicator} from 'react-native-paper'
 
+import i18n from '../../helper/i18n'
 import {useAppDispatch, useAppState} from '../../context/AppContext'
 import {apis, setGlobalLoading} from '../../helper/api'
 import gs from '../../../assets/styles/gs'
@@ -62,7 +63,7 @@ function HomeMain({navigation, route}) {
 			<ScrollView>
 				<Text style={ls.text}>HomeMain</Text>
 
-				<Text style={ls.text2}>Hello</Text>
+				<Text style={gs.h2}>{i18n.t('dict.hello')}</Text>
 			</ScrollView>
 		</SafeAreaView>
 	)

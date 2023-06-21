@@ -2,7 +2,7 @@
 	"expo": {
 		"owner": "cavernclub",
 		"name": "HOLD GLOBAL",
-		"slug": "HOLD",
+		"slug": "hold-global",
 		"version": "1.0.0",
 		"orientation": "portrait",
 		"icon": "./assets/app/icon.png",
@@ -15,14 +15,14 @@
 		},
 		"assetBundlePatterns": ["**/*"],
 		"ios": {
-			"bundleIdentifier": "com.cvrn.hold-global",
+			"bundleIdentifier": "com.cvrn.holdglobal",
 			"supportsTablet": true,
 			"requireFullScreen": true,
 			"buildNumber": "1",
 			"jsEngine": "hermes"
 		},
 		"android": {
-			"package": "com.cvrn.hold-global",
+			"package": "com.cvrn.holdglobal",
 			"versionCode": 1,
 			"adaptiveIcon": {
 				"foregroundImage": "./assets/app/adaptive-icon.png",
@@ -38,6 +38,12 @@
 		},
 		"web": {
 			"favicon": "./assets/app/favicon.png"
+		},
+		"plugins": ["expo-localization"],
+		"extra": {
+			"eas": {
+				"projectId": "8ffac4e1-c458-4f65-82a6-b14890c9b0f7"
+			}
 		}
 	}
 }

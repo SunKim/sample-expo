@@ -4,7 +4,7 @@ import {SafeAreaProvider} from 'react-native-safe-area-context'
 import {useFonts} from 'expo-font'
 import * as SplashScreen from 'expo-splash-screen'
 
-import {AppProvider} from './src/context/AppContext'
+import {AppContextProvider} from './src/context/AppContext'
 import Index from './src/screens/Index'
 
 // SplashScreen.preventAutoHideAsync()
@@ -36,7 +36,7 @@ export default function App() {
 	}
 
 	return (
-		<AppProvider>
+		<AppContextProvider>
 			<SafeAreaProvider>
 				<NavigationContainer
 					ref={navigationRef}
@@ -65,6 +65,6 @@ export default function App() {
 					<Index />
 				</NavigationContainer>
 			</SafeAreaProvider>
-		</AppProvider>
+		</AppContextProvider>
 	)
 }

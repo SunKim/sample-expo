@@ -2,6 +2,7 @@ import React, {useState, useEffect, useRef} from 'react'
 import {View, SafeAreaView, ScrollView, Alert, TouchableOpacity, Image, Text, Dimensions, StyleSheet} from 'react-native'
 import {ActivityIndicator} from 'react-native-paper'
 
+import i18n from '../../helper/i18n'
 import {useAppDispatch, useAppState} from '../../context/AppContext'
 import {apis} from '../../helper/api'
 import gs from '../../../assets/styles/gs'

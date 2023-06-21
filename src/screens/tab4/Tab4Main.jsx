@@ -1,7 +1,10 @@
 import React, {useState, useEffect, useRef} from 'react'
 import {View, SafeAreaView, ScrollView, Alert, TouchableOpacity, Image, Text, Dimensions, StyleSheet} from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import * as Updates from 'expo-updates'
 import {ActivityIndicator} from 'react-native-paper'
 
+import i18n from '../../helper/i18n'
 import {useAppDispatch, useAppState} from '../../context/AppContext'
 import {apis} from '../../helper/api'
 import gs from '../../../assets/styles/gs'
@@ -36,6 +39,7 @@ function Tab4Main({navigation, route}) {
 	}, [navigation])
 
 	const init = async () => {
+		console.log(`Tab4Main - init. i18n.locale: `, i18n.locale)
 		await getSomeData()
 	}
 
@@ -55,12 +59,54 @@ function Tab4Main({navigation, route}) {
 		}
 	}
 
+	const changeLang = async (lang) => {
+		await AsyncStorage.setItem('lang', lang)
+		i18n.locale = lang
+		// i18n.reset()
+
+		// await Updates.reloadAsync()
+		console.log(`Tab4Main - changeLang. lang: ${lang}, i18n.locale: `, i18n.locale)
+		console.log(`Tab4Main - changeLang. lang: ${lang}, i18n: `, i18n)
+		// navigation.replace('Tab4Main')
+	}
+
 	return progress ? (
 		<ActivityIndicator size={'large'} animating={true} color={'red'} style={{position: 'absolute', top: 300, alignSelf: 'center', zIndex: 10}} />
 	) : (
 		<SafeAreaView style={gs.container}>
-			<ScrollView>
+			<ScrollView style={{padding: 20}}>
 				<Text style={ls.text}>Tab4Main</Text>
+
+				<Text style={gs.h2}>
+					{i18n.t('dict.language')} {i18n.t('dict.setting')}
+				</Text>
+
+				<View style={gs.flexRow}>
+					<TouchableOpacity
+						style={gs.comButtonSmall}
+						onPress={async () => {
+							await changeLang('en')
+						}}
+					>
+						<Text style={gs.comButtonSmallText}>English</Text>
+					</TouchableOpacity>
+					<TouchableOpacity
+						style={[gs.comButtonSmall, gs.ml10]}
+						onPress={async () => {
+							await changeLang('ko')
+						}}
+					>
+						<Text style={gs.comButtonSmallText}>한국어</Text>
+					</TouchableOpacity>
+					<TouchableOpacity
+						style={[gs.comButtonSmall, gs.ml10]}
+						onPress={async () => {
+							await changeLang('in')
+						}}
+					>
+						<Text style={gs.comButtonSmallText}>Bahasa Indonesia</Text>
+					</TouchableOpacity>
+				</View>
 			</ScrollView>
 		</SafeAreaView>
 	)
@@ -72,5 +118,6 @@ const ls = StyleSheet.create({
 	text: {
 		fontSize: 16,
 		fontWeight: '700',
+		marginBottom: 20,
 	},
 })
