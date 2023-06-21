@@ -51,23 +51,31 @@ function Tab4Main({navigation, route}) {
 
 			if (result.success == '200') {
 			} else {
-				Alert.alert('잠깐!', result.message)
+				Alert.alert(i18n.t('dict.alert'), result.message)
 			}
 		} catch (e) {
 			console.error(`Tab4Main - getSomeData. error: `, e)
-			Alert.alert('잠깐!', `XXXX 도중 오류가 발생했습니다.\n고객센터로 연락 바랍니다.(카카오채널 @HOLD)`)
+			Alert.alert(i18n.t('dict.alert'), `처리 도중 오류가 발생했습니다.\n고객센터로 연락 바랍니다.`)
 		}
 	}
 
 	const changeLang = async (lang) => {
 		await AsyncStorage.setItem('lang', lang)
 		i18n.locale = lang
-		// i18n.reset()
 
 		// await Updates.reloadAsync()
 		console.log(`Tab4Main - changeLang. lang: ${lang}, i18n.locale: `, i18n.locale)
 		console.log(`Tab4Main - changeLang. lang: ${lang}, i18n: `, i18n)
 		// navigation.replace('Tab4Main')
+
+		Alert.alert('알림', i18n.t('message.languageChanged'), [
+			{
+				text: i18n.t('dict.ok'),
+				onPress: async () => {
+					await Updates.reloadAsync()
+				},
+			},
+		])
 	}
 
 	return progress ? (

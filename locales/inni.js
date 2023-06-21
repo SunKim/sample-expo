@@ -7,8 +7,14 @@ export const inni = {
 		myMenu: 'menu saya',
 	},
 	dict: {
+		ok: 'baik-baik',
+		alert: 'Alarm',
+		noti: 'Pemberitahuan',
 		hello: 'Halo',
 		language: 'bahasa',
 		setting: 'pengaturan',
+	},
+	message: {
+		languageChanged: 'Bahasa telah diubah.\nMulai ulang aplikasi.',
 	},
 }
