@@ -67,7 +67,7 @@ function Tab4Main({navigation, route}) {
 		console.log(`Tab4Main - changeLang. lang: ${lang}, i18n.locale: `, i18n.locale)
 		// navigation.replace('Tab4Main')
 
-		Alert.alert('알림', i18n.t('message.languageChanged'), [
+		Alert.alert(i18n.t('dict.noti'), i18n.t('message.languageChanged'), [
 			{
 				text: i18n.t('dict.ok'),
 				onPress: () => {
@@ -112,6 +112,14 @@ function Tab4Main({navigation, route}) {
 						}}
 					>
 						<Text style={gs.comButtonSmallText}>Bahasa Indonesia</Text>
+					</TouchableOpacity>
+					<TouchableOpacity
+						style={[gs.comButtonSmall, gs.ml10]}
+						onPress={async () => {
+							await changeLang('th')
+						}}
+					>
+						<Text style={gs.comButtonSmallText}>แบบไทย</Text>
 					</TouchableOpacity>
 				</View>
 			</ScrollView>

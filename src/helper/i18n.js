@@ -7,9 +7,10 @@ import {I18n} from 'i18n-js'
 import {en} from '../../locales/en'
 import {ko} from '../../locales/ko'
 import {inni} from '../../locales/inni'
+import {th} from '../../locales/th'
 
 // Set the key-value pairs for the different languages you want to support.
-const translations = {en, ko, in: inni}
+const translations = {en, ko, in: inni, th}
 const i18n = new I18n(translations)
 
 i18n.defaultLocale = 'en'
