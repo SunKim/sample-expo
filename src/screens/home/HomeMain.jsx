@@ -1,7 +1,10 @@
 import React, {useState, useEffect, useRef} from 'react'
 import {View, SafeAreaView, ScrollView, Alert, TouchableOpacity, Image, Text, TextInput as RNTextInput, Dimensions, StyleSheet} from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import {View, SafeAreaView, ScrollView, Alert, TouchableOpacity, Image, Text, TextInput as RNTextInput, Dimensions, StyleSheet} from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import {ActivityIndicator} from 'react-native-paper'
+import moment from 'moment-timezone'
 import moment from 'moment-timezone'
 
 import i18n from '../../helper/i18n'
@@ -17,6 +20,11 @@ function HomeMain({navigation, route}) {
 	const dispatch = useAppDispatch()
 
 	const [progress, setProgress] = useState(false)
+	const [testData, setTestData] = useState('')
+	const [testDate, setTestDate] = useState('')
+	// const [email, setEmail] = useState('test@cvrn.club')
+	const [email, setEmail] = useState('sjmarine97@gmail.com')
+	const [pwd, setPwd] = useState('1234')
 	const [testData, setTestData] = useState('')
 	const [testDate, setTestDate] = useState('')
 	// const [email, setEmail] = useState('test@cvrn.club')

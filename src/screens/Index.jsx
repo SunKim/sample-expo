@@ -25,6 +25,7 @@ export default function Index() {
 
 			// console.log(`Index. checkUserSession. user: `, user)
 
+			console.log(`Index. checkUserSession. user: `, user)
 			dispatch({type: 'SET_USER', user})
 		} catch (error) {
 			console.log(`Index. AsyncStorage.getItem(user) error:`, error)
