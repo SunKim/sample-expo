@@ -28,10 +28,7 @@ export default function HomeStackNavigator() {
 		// checkAndUpdate()
 	}, [])
 
-	// return (
-	return state.isGlobalLoading ? (
-		<ActivityIndicator size={'large'} animating={true} color={'red'} style={{position: 'absolute', top: 300, alignSelf: 'center', zIndex: 10}} />
-	) : (
+	return (
 		<HomeStack.Navigator>
 			<HomeStack.Screen
 				name='HomeMain'

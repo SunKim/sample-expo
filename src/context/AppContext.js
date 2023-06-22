@@ -3,6 +3,11 @@ import React, {createContext, useReducer, useContext} from 'react'
 // AppContext 에서 사용 할 기본 상태
 const initialState = {
 	isGlobalLoading: false,
+	// default locale(language)은 영어로 (i18n.js에도 설정). 사용자가 선택한 언어로 변경됨
+	lang: 'en',
+	// 사용자 기본 locale 정보 (currencyCode, currencySymbol, decimalSeparator, digitGroupingSeparator, measurementSystem, regionCode, textDirection)
+	locale: {},
+	calendar: {},
 
 	user: {},
 
@@ -19,6 +24,21 @@ function appReducer(state, action) {
 			return {
 				...state,
 				isGlobalLoading: action.isGlobalLoading,
+			}
+		case 'SET_LANG':
+			return {
+				...state,
+				lang: action.lang,
+			}
+		case 'SET_LOCALE':
+			return {
+				...state,
+				locale: action.locale,
+			}
+		case 'SET_CALENDAR':
+			return {
+				...state,
+				calendar: action.calendar,
 			}
 		case 'SET_USER':
 			return {
