@@ -90,36 +90,36 @@ function Tab4Main({navigation, route}) {
 
 				<View style={gs.flexRow}>
 					<TouchableOpacity
-						style={gs.comButtonSmall}
+						style={gs.smBtn}
 						onPress={async () => {
 							await changeLang('en')
 						}}
 					>
-						<Text style={gs.comButtonSmallText}>English</Text>
+						<Text style={gs.smBtnText}>English</Text>
 					</TouchableOpacity>
 					<TouchableOpacity
-						style={[gs.comButtonSmall, gs.ml10]}
+						style={[gs.smBtn, gs.ml10]}
 						onPress={async () => {
 							await changeLang('ko')
 						}}
 					>
-						<Text style={gs.comButtonSmallText}>한국어</Text>
+						<Text style={gs.smBtnText}>한국어</Text>
 					</TouchableOpacity>
 					<TouchableOpacity
-						style={[gs.comButtonSmall, gs.ml10]}
+						style={[gs.smBtn, gs.ml10]}
 						onPress={async () => {
 							await changeLang('in')
 						}}
 					>
-						<Text style={gs.comButtonSmallText}>Bahasa Indonesia</Text>
+						<Text style={gs.smBtnText}>Bahasa Indonesia</Text>
 					</TouchableOpacity>
 					<TouchableOpacity
-						style={[gs.comButtonSmall, gs.ml10]}
+						style={[gs.smBtn, gs.ml10]}
 						onPress={async () => {
 							await changeLang('th')
 						}}
 					>
-						<Text style={gs.comButtonSmallText}>แบบไทย</Text>
+						<Text style={gs.smBtnText}>แบบไทย</Text>
 					</TouchableOpacity>
 				</View>
 			</ScrollView>

@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react'
-import {View, SafeAreaView, ScrollView, Alert, TouchableOpacity, Image, Text, Dimensions, StyleSheet} from 'react-native'
+import {View, SafeAreaView, ScrollView, Alert, TouchableOpacity, Image, Text, TextInput as RNTextInput, Dimensions, StyleSheet} from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import {ActivityIndicator} from 'react-native-paper'
 import moment from 'moment-timezone'
 
@@ -18,6 +19,9 @@ function HomeMain({navigation, route}) {
 	const [progress, setProgress] = useState(false)
 	const [testData, setTestData] = useState('')
 	const [testDate, setTestDate] = useState('')
+	// const [email, setEmail] = useState('test@cvrn.club')
+	const [email, setEmail] = useState('sjmarine97@gmail.com')
+	const [pwd, setPwd] = useState('1234')
 
 	// 최초 화면 진입시 progress 보여줌.
 	useEffect(() => {
@@ -65,10 +69,41 @@ function HomeMain({navigation, route}) {
 		}
 	}
 
-	// return progress ? (
-	// 	<ActivityIndicator size={'large'} animating={true} color={'#ff0229'} style={{position: 'absolute', top: height / 2 - 30, alignSelf: 'center', zIndex: 9999}} />
-	// ) : (
-	return (
+	// login
+	const login = async () => {
+		// validation
+		if (!email) {
+			return Alert.alert(i18n.t('dict.alert'), i18n.t('message.inputEmail'))
+		} else if (!pwd) {
+			return Alert.alert(i18n.t('dict.alert'), i18n.t('message.inputPwd'))
+		}
+
+		try {
+			const result = await apis.TEST_LOGIN(email, pwd)
+			console.log(`HomeMain - login. result: `, result)
+
+			if (result.success == '200') {
+				dispatch({type: 'SET_USER', user: result.user})
+				await AsyncStorage.setItem('user', JSON.stringify(result.user))
+			} else {
+				Alert.alert(i18n.t('dict.alert'), result.message)
+			}
+		} catch (e) {
+			console.error(`HomeMain - getSomeData. error: `, e)
+			Alert.alert(i18n.t('dict.alert'), i18n.t('error.apiFail'))
+		}
+	}
+
+	// logout
+	const logout = async () => {
+		dispatch({type: 'SET_USER', user: null})
+		await AsyncStorage.removeItem('user')
+	}
+
+	// return (
+	return progress ? (
+		<ActivityIndicator size={'large'} animating={true} color={'#ff0229'} style={{position: 'absolute', top: height / 2 - 30, alignSelf: 'center', zIndex: 9999}} />
+	) : (
 		<SafeAreaView style={gs.container}>
 			<ScrollView style={{padding: 18}}>
 				<View style={gs.mb20}>
@@ -98,6 +133,49 @@ function HomeMain({navigation, route}) {
 					<Text style={gs.text14c3}>Timezone: {state.calendar.timeZone}</Text>
 					<Text style={gs.text14c3}>UTC: {testDate}</Text>
 					<Text style={gs.text14c3}>Local Time: {moment(testDate).tz(state.calendar.timeZone)?.format('YYYY-MM-DD HH:mm:ss')}</Text>
+				</View>
+
+				<View style={gs.mb20}>
+					<Text style={gs.h2}>{i18n.t('dict.login')}</Text>
+					<Text style={[gs.text14c3, gs.mb10]}>
+						Logged In : {state.user ? 'Yes' : 'No'} {state.user ? `[${state.user.email}]` : ''}
+					</Text>
+					{state.user ? (
+						<>
+							<TouchableOpacity style={gs.mdBtnWhite} onPress={logout} activeOpacity={0.8}>
+								<Text style={gs.mdBtnTextBlack}>{i18n.t('dict.logout')}</Text>
+							</TouchableOpacity>
+						</>
+					) : (
+						<>
+							<RNTextInput
+								inputmode={'email'}
+								keyboardType={'email-address'}
+								autoComplete={'email'}
+								autoFocus
+								autoCapitalize={'none'}
+								textContentType={'emailAddress'}
+								value={email}
+								style={{padding: 6, borderWidth: 0.5, borderColor: '#bbb', borderRadius: 2, marginBottom: 10}}
+								onChangeText={(text) => setEmail(text)}
+								placeholder={i18n.t('dict.email')}
+							/>
+							<RNTextInput
+								inputmode={'text'}
+								keyboardType={'default'}
+								autoComplete={'current-password'}
+								textContentType={'password'}
+								secureTextEntry
+								value={pwd}
+								style={{padding: 6, borderWidth: 0.5, borderColor: '#bbb', borderRadius: 2, marginBottom: 10}}
+								onChangeText={(text) => setPwd(text)}
+								placeholder={i18n.t('dict.pwd')}
+							/>
+							<TouchableOpacity style={gs.mdBtnRed} onPress={login} activeOpacity={0.8}>
+								<Text style={gs.mdBtnTextWhite}>{i18n.t('dict.login')}</Text>
+							</TouchableOpacity>
+						</>
+					)}
 				</View>
 			</ScrollView>
 		</SafeAreaView>

@@ -82,8 +82,33 @@ const gs = StyleSheet.create({
 		fontSize: 16,
 		color: '#999',
 	},
-
-	comButtonSmall: {
+	mdBtnWhite: {
+		padding: 10,
+		backgroundColor: '#fefefe',
+		borderColor: '#DFDFDF',
+		borderWidth: 1,
+		borderRadius: 2,
+		marginBottom: 10,
+	},
+	mdBtnRed: {
+		padding: 10,
+		backgroundColor: '#ff0229',
+		borderRadius: 2,
+		marginBottom: 10,
+	},
+	mdBtnTextBlack: {
+		fontSize: 14,
+		color: '#010101',
+		alignItems: 'center',
+		textAlign: 'center',
+	},
+	mdBtnTextWhite: {
+		fontSize: 14,
+		color: '#fefefe',
+		alignItems: 'center',
+		textAlign: 'center',
+	},
+	smBtn: {
 		backgroundColor: '#fff',
 		borderColor: '#DFDFDF',
 		borderWidth: 1,
@@ -93,7 +118,7 @@ const gs = StyleSheet.create({
 		paddingVertical: 4,
 		paddingHorizontal: 8,
 	},
-	comButtonSmallText: {
+	smBtnText: {
 		fontSize: 12,
 		lineHeight: 16,
 		textAlign: 'center',

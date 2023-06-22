@@ -42,6 +42,7 @@ const reqApi = async (uri, params) => {
 
 // prettier-ignore
 export const apis = {
-	TEST: async (sampleParam1, sampleParam2) => await reqApi(`/test/api`, { sampleParam1, sampleParam2 }),
+	TEST: async (sampleParam1, sampleParam2) => await reqApi(`/test/api`, {sampleParam1, sampleParam2}),
+	TEST_LOGIN: async (email, pwd) => await reqApi(`/test/api/login`, {email, pwd}),
 	// TEST : () => api.post(`/bottomPopup`, {}).then((r)=> r.data).catch((err)=> err),
 }

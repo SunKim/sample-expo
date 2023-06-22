@@ -13,10 +13,17 @@ export const en = {
 		hello: 'Hello',
 		language: 'Language',
 		setting: 'Setting',
+		login: 'Login',
+		logout: 'Logout',
+		join: 'Join',
+		email: 'Email',
+		pwd: 'Password',
 	},
 	message: {
 		thisIsTestPage: 'This is a test page.',
 		languageChanged: 'Language has been changed.\nThe app will be restarted.',
+		inputEmail: 'Please input your email address.',
+		inputPwd: 'Please input your password.',
 	},
 	error: {
 		apiFail: 'Error occured while processing API.\nPlease contact us.',

@@ -13,10 +13,17 @@ export const ko = {
 		hello: '안녕하세요',
 		language: '언어',
 		setting: '설정',
+		login: '로그인',
+		logout: '로그아웃',
+		join: '회원가입',
+		email: '이메일',
+		pwd: '비밀번호',
 	},
 	message: {
 		thisIsTestPage: '이것은 테스트페이지 입니다.',
 		languageChanged: '언어가 변경되었습니다.\n앱을 재시작합니다.',
+		inputEmail: '이메일을 입력하세요',
+		inputPwd: '비밀번호를 입력하세요',
 	},
 	error: {
 		apiFail: 'API 처리중 오류가 발생했습니다.\n관리자에게 문의 바랍니다.',

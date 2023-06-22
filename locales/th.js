@@ -13,10 +13,17 @@ export const th = {
 		hello: 'สวัสดี',
 		language: 'ภาษา',
 		setting: 'การตั้งค่า',
+		login: 'เข้าสู่ระบบ',
+		logout: 'ออกจากระบบ',
+		join: 'สมัครสมาชิก',
+		email: 'อีเมล',
+		pwd: 'รหัสผ่าน',
 	},
 	message: {
 		thisIsTestPage: 'นี่คือหน้าทดสอบ',
 		languageChanged: 'ภาษาได้รับการเปลี่ยนแปลง.\nแอปพลิเคชันจะเริ่มต้นใหม่',
+		inputEmail: 'กรุณากรอกอีเมล',
+		inputPwd: 'กรุณากรอกรหัสผ่าน',
 	},
 	error: {
 		apiFail: 'เกิดข้อผิดพลาดในการประมวลผล API.\nโปรดติดต่อเรา',

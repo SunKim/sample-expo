@@ -9,7 +9,7 @@ const initialState = {
 	locale: {},
 	calendar: {},
 
-	user: {},
+	user: null,
 
 	someArray: [],
 	someObj: {},

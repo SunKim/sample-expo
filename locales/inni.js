@@ -13,10 +13,17 @@ export const inni = {
 		hello: 'Halo',
 		language: 'bahasa',
 		setting: 'pengaturan',
+		login: 'Gabung',
+		logout: 'keluar',
+		join: 'bergabung',
+		email: 'Surel',
+		pwd: 'Kata sandi',
 	},
 	message: {
 		thisIsTestPage: 'Ini adalah halaman percobaan.',
 		languageChanged: 'Bahasa telah diubah.\nMulai ulang aplikasi.',
+		inputEmail: 'Masukkan email Anda',
+		inputPwd: 'Masukkan kata sandi Anda',
 	},
 	error: {
 		apiFail: 'Terjadi kesalahan saat memproses API.\nHarap hubungi administrator.',
