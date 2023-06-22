@@ -27,20 +27,16 @@ export const deviceInfo = {
 	isDevice: Device.isDevice,
 }
 
-// prettier-ignore
-// export const apis = {
-//   TEST : (sampleParam1, sampleParam2) => api.post(`/test/api`, {sampleParam1, sampleParam2, appVerInfo, deviceInfo, locale: i18n.locale}).then((r)=> r.data).catch((err)=> err),
-// 	// TEST : () => api.post(`/bottomPopup`, {}).then((r)=> r.data).catch((err)=> err),
-// }
-
 const reqApi = async (uri, params) => {
 	const paramsWithInfo = {...params, appVerInfo, deviceInfo}
 	console.log(`requesting Api [${uri}] - paramsWithInfo: `, paramsWithInfo)
+	// prettier-ignore
 	return await api.post(uri, paramsWithInfo).then((r) => r.data).catch((err) => err)
 }
 
 // prettier-ignore
 export const apis = {
-	TEST: async (sampleParam1, sampleParam2) => await reqApi(`/test/api`, { sampleParam1, sampleParam2 }),
+	TEST: async (sampleParam1, sampleParam2) => await reqApi(`/test/api`, {sampleParam1, sampleParam2}),
+	TEST_LOGIN: async (email, pwd) => await reqApi(`/test/api/login`, {email, pwd}),
 	// TEST : () => api.post(`/bottomPopup`, {}).then((r)=> r.data).catch((err)=> err),
 }

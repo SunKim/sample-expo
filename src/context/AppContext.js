@@ -4,7 +4,7 @@ import React, {createContext, useReducer, useContext} from 'react'
 const initialState = {
 	isGlobalLoading: false,
 
-	user: {},
+	user: null,
 
 	someArray: [],
 	someObj: {},

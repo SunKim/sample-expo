@@ -21,12 +21,6 @@ export default function Index() {
 			const user = rawUser != null ? JSON.parse(rawUser) : null
 
 			console.log(`Index. checkUserSession. user: `, user)
-
-			// if (user) {
-			// 	dispatch({type: 'SET_USER', user})
-			// } else {
-			// 	dispatch({type: 'SET_IS_LOGIN', user: null})
-			// }
 			dispatch({type: 'SET_USER', user})
 		} catch (error) {
 			console.log(`Index. AsyncStorage.getItem(user) error:`, error)
